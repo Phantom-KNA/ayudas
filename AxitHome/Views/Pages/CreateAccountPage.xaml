@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AxitHome.Views.Pages.CreateAccountPage"
+             Title="CreateAccount"
+             xmlns:controls="clr-namespace:AxitHome.Views.Controls"
+             xmlns:helpers="clr-namespace:AxitHome.Helpers"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False">
+    <Grid HorizontalOptions="Fill" VerticalOptions="Fill" x:Name="MainGrid">
+        <ScrollView Orientation="Vertical" HorizontalOptions="Fill" VerticalOptions="Fill">
+            <Grid Margin="24,21,24,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <!--<Image Grid.Row="0" Source="app_logo" HorizontalOptions="Start"></Image>-->
+                <Label Grid.Row="1"
+                   Text="Crear una cuenta"
+                   Margin="0,21,0,20"
+                   Style="{StaticResource LabelTextBold}"
+                   FontSize="25"></Label>
+                <controls:OutlinedEntry Grid.Row="2"
+                                        Margin="0,10,0,0"
+                                        Text="{Binding Name}"
+                                        Placeholder="Nombre(s)"
+                                        Keyboard="Text"
+                                        x:Name="EntryName"
+                                        Style="{StaticResource FormControl}"
+                                        IsIconVisible="True"
+                                        IconFontFamily="CustomIcon"
+                                        Icon="{x:Static helpers:CustomIconsFont.icon_userBold}"
+                                        IconSize="20"
+                                        IconColor="{StaticResource Gray500}"></controls:OutlinedEntry>
+                <controls:OutlinedEntry Grid.Row="3"
+                                        Margin="0,10,0,0"
+                                        Text="{Binding LastName}"
+                                        Placeholder="Apellido"
+                                        Keyboard="Text"
+                                        x:Name="EntryLastName"
+                                        Style="{StaticResource FormControl}"
+                                        IsIconVisible="True"
+                                        IconFontFamily="CustomIcon"
+                                        Icon="{x:Static helpers:CustomIconsFont.icon_userBold}"
+                                        IconSize="20"
+                                        IconColor="{StaticResource Gray500}"></controls:OutlinedEntry>
+                <controls:OutlinedEntry Grid.Row="4"
+                                        Margin="0,10,0,0"
+                                        Text="{Binding Email}"
+                                        Placeholder="Email"
+                                        Keyboard="Email"
+                                        x:Name="EntryEmail"
+                                        Style="{StaticResource FormControl}"
+                                        IsIconVisible="True"
+                                        IconFontFamily="CustomIcon"
+                                        Icon="{x:Static helpers:CustomIconsFont.icon_email}"
+                                        IconSize="36"
+                                        IconColor="{StaticResource Gray500}"></controls:OutlinedEntry>
+                <controls:OutlinedEntry Grid.Row="5"
+                                        Margin="0,10,0,0"
+                                        Text="{Binding ConfirmEmail}"
+                                        Placeholder="Confirmación de Email"
+                                        Keyboard="Email"
+                                        x:Name="EntryConfirmEmail"
+                                        Style="{StaticResource FormControl}"
+                                        IsIconVisible="True"
+                                        IconFontFamily="CustomIcon"
+                                        Icon="{x:Static helpers:CustomIconsFont.icon_email}"
+                                        IconSize="36"
+                                        IconColor="{StaticResource Gray500}"></controls:OutlinedEntry>
+                <controls:OutlinedEntry Grid.Row="6"
+                                        Margin="0,10,0,0"
+                                        Text="{Binding NumAccion}"
+                                        Placeholder="Número de acción"
+                                        Keyboard="Numeric"
+                                        x:Name="EntryNumAccion"
+                                        Style="{StaticResource FormControl}"
+                                        ShowPasswordButtonVisible="True"
+                                        IsIconVisible="True"
+                                        IconFontFamily="CustomIcon"
+                                        Icon="{x:Static helpers:CustomIconsFont.icon_secure}"
+                                        IconSize="36"
+                                        IconColor="{StaticResource Gray500}">
+                </controls:OutlinedEntry>
+                <Button Grid.Row="7"
+                    Margin="0,28,0,0"
+                    Text="Tomar Foto"
+                    Style="{StaticResource Btn-Primary-300}"
+                    Command="{Binding AccederCommand}"></Button>
+                <Button Grid.Row="8"
+                    Margin="0,28,0,22"
+                    Text="Registrarse"
+                    Style="{StaticResource Btn-Primary}"
+                    Command="{Binding AccederCommand}"></Button>
+                <Label Text="¿Ya cuentas con un usuario? Ingresa ahora"
+                       Style="{StaticResource ControlLabel}" Grid.Row="9" HorizontalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoLogin}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+        </ScrollView>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AxitHome.Views.Pages.LoginPage"
+             Title="LoginPage"
+             xmlns:controls="clr-namespace:AxitHome.Views.Controls"
+             xmlns:helpers="clr-namespace:AxitHome.Helpers"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False">
+    <Grid HorizontalOptions="Fill" VerticalOptions="Fill" x:Name="MainGrid">
+        <ScrollView Orientation="Vertical" HorizontalOptions="Fill" VerticalOptions="Fill">
+            <Grid Margin="24,21,24,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="1" Source="logoaxit" HorizontalOptions="Center" Margin="0,20,0,20"></Image>
+                <controls:OutlinedEntry Grid.Row="2"
+                                        Margin="0,10,0,0"
+                                        Text="{Binding User}"
+                                        Placeholder="Usuario"
+                                        Keyboard="Email"
+                                        x:Name="EntryUser"
+                                        Style="{StaticResource FormControl}"
+                                        IsIconVisible="True"
+                                        IconFontFamily="CustomIcon"
+                                        Icon="{x:Static helpers:CustomIconsFont.icon_email}"
+                                        IconSize="36"
+                                        IconColor="{StaticResource Gray500}"></controls:OutlinedEntry>
+                <controls:OutlinedEntry Grid.Row="3"
+                                        Margin="0,20,0,0"
+                                        Text="{Binding Password}"
+                                        Placeholder="Contraseña"
+                                        Keyboard="Text"
+                                        x:Name="EntryPassword"
+                                        Style="{StaticResource FormControl}"
+                                        ShowPasswordButtonVisible="True"
+                                        IsIconVisible="True"
+                                        IconFontFamily="CustomIcon"
+                                        Icon="{x:Static helpers:CustomIconsFont.icon_secure}"
+                                        IconSize="36"
+                                        IconColor="{StaticResource Gray500}">
+                </controls:OutlinedEntry>
+                <Button Grid.Row="4"
+                    Margin="0,28,0,28"
+                    Text="Inicia Sesión"
+                    Style="{StaticResource Btn-Primary}"
+                    Command="{Binding IngresarCommand}"></Button>
+                <Label Text="O"
+                       Style="{StaticResource ControlLabel}" Grid.Row="5" HorizontalTextAlignment="Center"></Label>
+                <Button Grid.Row="6"
+                    Margin="0,28,0,28"
+                    Text="Regístrate"
+                    Style="{StaticResource Btn-Secondary}"
+                    Command="{Binding RegistrarCommand}"></Button>
+                <Label Text="¿Olvidaste tu contraseña?"
+                       Style="{StaticResource ControlLabel}" Grid.Row="7" HorizontalTextAlignment="Center"></Label>
+                <Label Grid.Row="8"
+                       Margin="0,0,0,10"
+                       Text="{Binding AppVersion, StringFormat='Ver. {0}'}"
+                       Style="{StaticResource VersionLabel}"></Label>
+                <VerticalStackLayout Grid.Row="9" x:Name="RetosResult" IsVisible="False">
+                    <Image x:Name="Reto1" HeightRequest="500"></Image>
+                    <Image x:Name="Reto2" HeightRequest="500"></Image>
+                    <Image x:Name="Reto3" HeightRequest="500"></Image>
+                </VerticalStackLayout>
+            </Grid>
+        </ScrollView>
+    </Grid>
+</ContentPage>

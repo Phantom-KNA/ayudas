@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="AxitHome.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:AxitHome"
+    xmlns:views="clr-namespace:AxitHome.Views.Pages"
+    Shell.FlyoutBehavior="Disabled">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate views:LoginPage}"
+        Route="LoginPage"/>
+    <TabBar Route="Main" x:Name="TabbBar">
+        <Tab Title="Inicio"
+             Shell.TabBarBackgroundColor="{OnPlatform iOS={AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}, Android={AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}}"
+             Shell.TabBarTitleColor="{DynamicResource Gray900}"
+             Shell.TabBarUnselectedColor="{DynamicResource Gray400}"
+             Icon="{OnPlatform iOS=icon_home, Android=icon_home}"
+             Route="Inicio">
+            <ShellContent ContentTemplate="{DataTemplate views:HomePage}"></ShellContent>
+        </Tab>
+        <Tab Title="Notificaciones"
+             Shell.TabBarBackgroundColor="{OnPlatform iOS={AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}, Android={AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}}"
+             Shell.TabBarTitleColor="{DynamicResource Gray900}"
+             Shell.TabBarUnselectedColor="{DynamicResource Gray400}"
+             Icon="{OnPlatform iOS=icon_notify, Android=icon_notify}"
+             Route="Membresia">
+            <ShellContent ContentTemplate="{DataTemplate views:HomePage}"></ShellContent>
+        </Tab>
+        <Tab Title="Perfil"
+             Shell.TabBarBackgroundColor="{OnPlatform iOS={AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}, Android={AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}}"
+             Shell.TabBarTitleColor="{DynamicResource Gray900}"
+             Shell.TabBarUnselectedColor="{DynamicResource Gray400}"
+             Icon="{OnPlatform iOS=icon_user, Android=icon_user}"
+             Route="Perfil">
+            <ShellContent ContentTemplate="{DataTemplate views:HomePage}"></ShellContent>
+        </Tab>
+    </TabBar>
+</Shell>

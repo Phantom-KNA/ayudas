@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AxitHome.Views.Pages.HomePage"
+             Title="HomePage"
+             xmlns:controls="clr-namespace:AxitHome.Views.Controls"
+             xmlns:helpers="clr-namespace:AxitHome.Helpers"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False"
+             BackgroundColor="{StaticResource DefaultPageBackground}">
+    <Grid HorizontalOptions="Fill" VerticalOptions="Fill" x:Name="MainGrid">
+        <ScrollView Orientation="Vertical" HorizontalOptions="Fill" VerticalOptions="Fill">
+            <Grid Margin="24,21,24,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="1" Source="logoaxit" HorizontalOptions="Center"></Image>
+                <Label Text="Pases"
+                       Style="{StaticResource Title2}" Grid.Row="2"></Label>
+                <Button Grid.Row="9"
+                    Margin="0,28,0,28"
+                    Text="Emergencia del club"
+                    Style="{StaticResource Btn-Cancel}"
+                    Command="{Binding RegistrarCommand}" VerticalOptions="End"></Button>
+            </Grid>
+        </ScrollView>
+    </Grid>
+</ContentPage>

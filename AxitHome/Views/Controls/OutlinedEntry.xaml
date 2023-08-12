@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Grid xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AxitHome.Views.Controls.OutlinedEntry"
+             xmlns:controls="clr-namespace:AxitHome.Views.Controls"
+             xmlns:helpers="clr-namespace:AxitHome.Helpers"
+             x:Name="Root">
+    <Border HeightRequest="60" VerticalOptions="Start" 
+           Stroke="{Binding Source={x:Reference Root}, Path=BorderColor}"
+           StrokeThickness="1"
+           x:Name="MainBorder">
+        <Border.StrokeShape>
+            <RoundRectangle CornerRadius="{Binding Source={x:Reference Root}, Path=CornerRadius}"></RoundRectangle>
+        </Border.StrokeShape>
+        <Grid HorizontalOptions="Fill" BackgroundColor="{StaticResource DefaultEntryBackground}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" 
+                   FontFamily="{Binding Source={x:Reference Root}, Path=IconFontFamily}"
+                   Text="{Binding Source={x:Reference Root}, Path=Icon}"
+                   FontSize="{Binding Source={x:Reference Root}, Path=IconSize}" 
+                   VerticalOptions="Center"
+                   VerticalTextAlignment="Center"
+                   Margin="15,10,0,10"
+                   IsVisible="{Binding Source={x:Reference Root}, Path=IsIconVisible}"
+                   TextColor="{Binding Source={x:Reference Root}, Path=IconColor}"></Label>
+            <controls:BorderlessEntry
+                Grid.Column="1"
+                IsPassword="{Binding Source={x:Reference Root}, Path=IsPassword}"
+                Placeholder="{Binding Source={x:Reference Root}, Path=Placeholder}"
+                FontSize="{Binding Source={x:Reference Root}, Path=FontSize}"
+                Margin="{Binding Source={x:Reference Root}, Path=TextMargin}"
+                Text="{Binding Source={x:Reference Root}, Path=Text}"
+                FontFamily="{Binding Source={x:Reference Root}, Path=TextFontFamily}"
+                TextColor="{Binding Source={x:Reference Root}, Path=TextColor}"
+                CharacterSpacing="{Binding Source={x:Reference Root}, Path=TextCharacterSpacing}"
+                PlaceholderColor="{Binding Source={x:Reference Root}, Path= PlaceholderColor}"
+                Keyboard="{Binding Source={x:Reference Root}, Path=Keyboard}"
+                HorizontalOptions="Fill"
+                IsEnabled="{Binding Source={x:Reference Root}, Path=IsEnabled}"
+                HorizontalTextAlignment="{Binding Source={x:Reference Root}, Path=TextHorizaontalTextAligment}"
+                CursorPosition="{Binding Source={x:Reference Root}, Path=CursorPosition}"
+                IsReadOnly="{Binding Source={x:Reference Root},Path=ReadOnly}"
+                x:Name="MainEntry"></controls:BorderlessEntry>
+
+            <Label Grid.Column="2"  FontFamily="IonIcons"
+                    Text="X"
+                    FontSize="18" 
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center"
+                    Margin="0"
+                    HorizontalOptions="Center"
+                    TextColor="{DynamicResource Gray200}"
+                    x:Name="ClearButton"
+                    IsVisible="{Binding Source={x:Reference Root}, Path=HasClearButton}">
+            </Label>
+
+            <Label Grid.Column="3"  FontFamily="CustomIcon"
+                   Text="{x:Static helpers:CustomIconsFont.icon_eyeOpen}"
+                   FontSize="25" 
+                   VerticalOptions="Center"
+                   VerticalTextAlignment="Center"
+                   Margin="0,0,15,0"
+                   HorizontalOptions="Center"
+                   TextColor="{DynamicResource Gray400}"
+                   x:Name="ShowPassButton"
+                   IsVisible="{Binding Source={x:Reference Root}, Path=ShowPasswordButtonVisible}">
+            </Label>
+        </Grid>
+    </Border>
+
+</Grid>
