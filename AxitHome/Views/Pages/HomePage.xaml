@@ -26,11 +26,17 @@
                 <Image Grid.Row="1" Source="logoaxit" HorizontalOptions="Center"></Image>
                 <Label Text="Pases"
                        Style="{StaticResource Title2}" Grid.Row="2"></Label>
+
+                <Button Grid.Row="8"
+                        Margin="0,10,0,10"
+                        Text="Buscar Mascotas"
+                        Style="{StaticResource Btn-Cancel}"
+                        Command="{Binding NavigateToMascotasCommand}" />
                 <Button Grid.Row="9"
-                    Margin="0,28,0,28"
-                    Text="Emergencia del club"
-                    Style="{StaticResource Btn-Cancel}"
-                    Command="{Binding RegistrarCommand}" VerticalOptions="End"></Button>
+                        Margin="0,28,0,28"
+                        Text="Emergencia del club"
+                        Style="{StaticResource Btn-Cancel}"
+                        Command="{Binding RegistrarCommand}" VerticalOptions="End"></Button>
             </Grid>
         </ScrollView>
     </Grid>

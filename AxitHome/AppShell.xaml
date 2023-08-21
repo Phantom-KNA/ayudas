@@ -7,10 +7,17 @@
     xmlns:views="clr-namespace:AxitHome.Views.Pages"
     Shell.FlyoutBehavior="Disabled">
 
+    <!-- LoginPage -->
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate views:LoginPage}"
         Route="LoginPage"/>
+
+    <!-- MascotasRegistradasPage -->
+    <ShellContent
+        Title="Mascotas Registradas"
+        ContentTemplate="{DataTemplate views:MascotasRegistradasPage}"
+        Route="MascotasRegistradasPage"/>
     <TabBar Route="Main" x:Name="TabbBar">
         <Tab Title="Inicio"
              Shell.TabBarBackgroundColor="{OnPlatform iOS={AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}, Android={AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}}"

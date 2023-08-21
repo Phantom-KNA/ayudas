@@ -1,0 +1,49 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AxitHome.Views.Pages.MascotasRegistradasPage"
+             BackgroundColor="#F5F9FF">
+    
+
+    <StackLayout Spacing="20">
+        <!-- Sección de Navegación -->
+        <StackLayout Orientation="Horizontal" Padding="10,0,10,10" Spacing="20">
+            <!-- Botón para regresar -->
+            <Button Text="◀" WidthRequest="50" HeightRequest="50" BackgroundColor="#000080" CornerRadius="25" Command="{Binding GoBackCommand}" TextColor="White" FontSize="Large" FontAttributes="Bold" VerticalOptions="Center"/>
+            <!-- Título de la página -->
+            <Label Text="Mascotas Registradas" VerticalOptions="Center" HorizontalOptions="StartAndExpand" Style="{StaticResource Title2}" />
+        </StackLayout>
+
+        <!-- Sección de Búsqueda -->
+        <StackLayout Orientation="Horizontal" Padding="10" Spacing="10">
+            <!-- Marco para el campo de texto de búsqueda -->
+            <Frame BackgroundColor="White" Padding="0" CornerRadius="10" HasShadow="False" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                <Entry Placeholder="Buscar" Text="{Binding SearchTerm}" BackgroundColor="Transparent" TextColor="{StaticResource PrimaryTextColor}" />
+            </Frame>
+            <!-- Botón de Filtros -->
+            <Button Text="Filtros" BackgroundColor="#8FB8FC" WidthRequest="80" Command="{Binding ApplyFiltersCommand}" TextColor="White" CornerRadius="10"/>
+        </StackLayout>
+
+        <!-- Sección de Resultados de la Búsqueda -->
+        <ListView ItemsSource="{Binding Pets}" SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="10">
+                            <!-- Imagen de la mascota -->
+                            <Image Source="{Binding Image}" WidthRequest="60" HeightRequest="60" />
+                            <!-- Detalles de la mascota (nombre y edad) -->
+                            <StackLayout Orientation="Vertical" Spacing="5">
+                                <Label Text="{Binding Name}" FontAttributes="Bold" TextColor="{StaticResource PrimaryTextColor}" />
+                                <Label Text="{Binding Age}" FontSize="Small" TextColor="{StaticResource SecondaryTextColor}" />
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <!-- Sección de Registro de Mascotas -->
+        <Button Text="Registrar Mascota" BackgroundColor="#8FB8FC" Command="{Binding RegisterPetCommand}" TextColor="#000080" Padding="15" CornerRadius="20" BorderColor="#8FB8FC" BorderWidth="1" VerticalOptions="End" Margin="0,0,0,10" />
+
+    </StackLayout>
+</ContentPage>
