@@ -2,7 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AxitHome.Views.Pages.MascotasRegistradasPage"
              BackgroundColor="#F5F9FF">
-    
+
 
     <StackLayout Spacing="20">
         <!-- Sección de Navegación -->
